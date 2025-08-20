@@ -11,108 +11,74 @@
 
   <!-- Code highlight theme -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/monokai.css">
-
-  <style>
-    .brand { color:#7dd3fc; font-weight:600; }
-  </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title -->
+      <!-- Title with email (visible on slide) -->
       <section>
         <h2>Quarterly Earnings Report</h2>
-        <p class="brand">Financial Institution — Executive Briefing</p>
-        <p><strong>Contact:</strong> 24ds1000011@ds.study.iitm.ac.in</p>
-        <aside class="notes">
-          Welcome! This deck highlights top-line performance, variance vs guidance, and outlook.
-          Use ←/→ to navigate; press “S” to open speaker view.
-        </aside>
+        <p><strong>Email:</strong> 24ds1000011@ds.study.iitm.ac.in</p>
       </section>
 
-      <!-- Markdown slide (required) -->
+      <!-- Markdown slide -->
       <section data-markdown>
         <textarea data-template>
-### Q4 Headlines (Markdown)
+### Key Metrics (Markdown)
 - Revenue growth **+6.1% YoY**
-- Operating margin **–90 bps** (mix + inflation)
-- Net retention **72.45%** vs **85%** industry target  
-  _Focus area: retention uplift initiatives_
+- Retention rate: **72.45%** vs **85%** target
         </textarea>
-        <aside class="notes">
-          Hit the three bullets quickly; set context for retention workstreams.
-        </aside>
       </section>
 
-      <!-- Fragments (animated bullet reveal) -->
+      <!-- Fragments -->
       <section>
-        <h3>Drivers of EPS Variance</h3>
+        <h3>Drivers of Change</h3>
         <ul>
           <li class="fragment fade-in">Volume softness in EU auto</li>
-          <li class="fragment fade-in">Freight cost normalization (tailwind)</li>
+          <li class="fragment fade-in">Freight cost normalization</li>
           <li class="fragment fade-in">FX headwinds in LATAM</li>
-          <li class="fragment fade-in">Working capital improvements</li>
         </ul>
-        <aside class="notes">
-          Pause between fragments; quantify impacts verbally where useful.
-        </aside>
       </section>
 
-      <!-- Code sample with syntax highlighting -->
+      <!-- Code sample -->
       <section>
-        <h3>Example: Earnings Sensitivity (Python)</h3>
-        <pre><code class="language-python" data-trim data-noescape>
+        <h3>Python Example</h3>
+        <pre><code class="language-python" data-trim>
 import numpy as np
 
-revenue = np.array([2.1, 2.2, 2.35, 2.5])  # $B
-margin  = np.array([0.123, 0.118, 0.121, 0.120])
-eps     = (revenue * margin) / 0.42        # shares (B)
-
-print("EPS (est):", eps.round(2))
+rates = [71.51, 74.36, 71.96, 71.98]
+avg = np.mean(rates)
+print("Avg Retention:", round(avg, 2))  # should be 72.45
         </code></pre>
-        <aside class="notes">
-          Illustrative only—tie real EPS sensitivity to guidance ranges.
-        </aside>
       </section>
 
-      <!-- Math (financial formulas) -->
+      <!-- Math -->
       <section>
-        <h3>Key Financial Formulas</h3>
-        <p>Return on Equity (ROE): \\( \\displaystyle ROE = \\frac{\\text{Net Income}}{\\text{Avg. Shareholders' Equity}} \\)</p>
-        <p>WACC (simplified): \\( WACC = \\frac{E}{D+E}r_e + \\frac{D}{D+E}r_d(1-T) \\)</p>
-        <aside class="notes">
-          Remind how we benchmark ROE vs peers and why WACC guides hurdle rates.
-        </aside>
+        <h3>Formula</h3>
+        <p>Return on Equity: \\( ROE = \\frac{Net\ Income}{Avg.\ Equity} \\)</p>
       </section>
 
-      <!-- Closing slide with email (clear for validators) -->
+      <!-- Closing with email (again, visible) -->
       <section>
-        <h3>Q&A</h3>
-        <p>Slides: GitHub Pages • Contact: <strong>24ds1000011@ds.study.iitm.ac.in</strong></p>
-        <aside class="notes">
-          Invite questions; then show appendix if needed.
-        </aside>
+        <h3>Thank You</h3>
+        <p>Contact: <strong>24ds1000011@ds.study.iitm.ac.in</strong></p>
       </section>
 
     </div>
   </div>
 
-  <!-- RevealJS scripts + plugins -->
+  <!-- RevealJS scripts -->
   <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
   <script src="https://unpkg.com/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
   <script src="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
   <script src="https://unpkg.com/reveal.js@5.1.0/plugin/math/math.js"></script>
-  <script src="https://unpkg.com/reveal.js@5.1.0/plugin/notes/notes.js"></script>
-
   <script>
     Reveal.initialize({
       hash: true,
       slideNumber: 'c/t',
       progress: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ],
-      // Math config (default KaTeX via plugin)
-      math: { }
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
     });
   </script>
 </body>
