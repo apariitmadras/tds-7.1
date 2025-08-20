@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings — RevealJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Core styles -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme">
+  <!-- Code highlight theme -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+  <style>
+    .brand { color:#7dd3fc; font-weight:600; }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title -->
+      <section>
+        <h2>Quarterly Earnings Report</h2>
+        <p class="brand">Financial Institution — Executive Briefing</p>
+        <p><strong>Contact:</strong> 24ds1000011@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Welcome! This deck highlights top-line performance, variance vs guidance, and outlook.
+          Use right/left to navigate; “s” opens the speaker view.
+        </aside>
+      </section>
+
+      <!-- Markdown slide (required) -->
+      <section data-markdown>
+        <textarea data-template>
+### Q4 Headlines (Markdown)
+- Revenue growth **+6.1% YoY**
+- Operating margin **–90 bps** (mix + inflation)
+- Net retention **72.5%** vs **85%** industry target  
+  _Focus area: retention uplift initiatives_
+        </textarea>
+        <aside class="notes">
+          Hit the three bullets quickly; set the context for retention workstreams.
+        </aside>
+      </section>
+
+      <!-- Fragments (animated bullet reveal) -->
+      <section>
+        <h3>Drivers of EPS Variance</h3>
+        <ul>
+          <li class="fragment fade-in">Volume softness in EU auto</li>
+          <li class="fragment fade-in">Freight cost normalization (tailwind)</li>
+          <li class="fragment fade-in">FX headwinds in LATAM</li>
+          <li class="fragment fade-in">Working capital improvements</li>
+        </ul>
+        <aside class="notes">
+          Pause between fragments; quantify impacts verbally where useful.
+        </aside>
+      </section>
+
+      <!-- Code sample with syntax highlighting -->
+      <section>
+        <h3>Example: Earnings Sensitivity (Python)</h3>
+        <pre><code class="language-python" data-trim data-noescape>
+import numpy as np
+
+revenue = np.array([2.1, 2.2, 2.35, 2.5])  # $B
+margin  = np.array([0.123, 0.118, 0.121, 0.120])
+eps     = (revenue * margin) / 0.42        # shares (B)
+
+print("EPS (est):", eps.round(2))
+        </code></pre>
+        <aside class="notes">
+          This is illustrative only—tie real EPS sensitivity to guidance ranges.
+        </aside>
+      </section>
+
+      <!-- Math (financial formulas) -->
+      <section>
+        <h3>Key Financial Formulas</h3>
+        <p>Return on Equity (ROE): \\( \\displaystyle ROE = \\frac{\\text{Net Income}}{\\text{Avg. Shareholders' Equity}} \\)</p>
+        <p>WACC (simplified): \\( WACC = \\frac{E}{D+E}r_e + \\frac{D}{D+E}r_d(1-T) \\)</p>
+        <aside class="notes">
+          Remind audience how we benchmark ROE vs peers and why WACC guides hurdle rates.
+        </aside>
+      </section>
+
+      <!-- Closing -->
+      <section>
+        <h3>Q&A</h3>
+        <p>Slides: GitHub Pages • Contact: <strong>24ds1000011@ds.study.iitm.ac.in</strong></p>
+        <aside class="notes">
+          Invite questions; follow with appendix as needed.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal core + plugins -->
+  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      progress: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ],
+      // Math config (KaTeX via CDN inside plugin)
+      math: {
+        // defaults are fine; plugin loads KaTeX automatically
+      }
+    });
+  </script>
+</body>
+</html>
