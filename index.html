@@ -4,11 +4,14 @@
   <meta charset="utf-8" />
   <title>Quarterly Earnings — RevealJS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Core styles -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js/dist/theme/black.css" id="theme">
+
+  <!-- RevealJS core + theme -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+
   <!-- Code highlight theme -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js/plugin/highlight/monokai.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/monokai.css">
+
   <style>
     .brand { color:#7dd3fc; font-weight:600; }
   </style>
@@ -24,7 +27,7 @@
         <p><strong>Contact:</strong> 24ds1000011@ds.study.iitm.ac.in</p>
         <aside class="notes">
           Welcome! This deck highlights top-line performance, variance vs guidance, and outlook.
-          Use right/left to navigate; “s” opens the speaker view.
+          Use ←/→ to navigate; press “S” to open speaker view.
         </aside>
       </section>
 
@@ -34,11 +37,11 @@
 ### Q4 Headlines (Markdown)
 - Revenue growth **+6.1% YoY**
 - Operating margin **–90 bps** (mix + inflation)
-- Net retention **72.5%** vs **85%** industry target  
+- Net retention **72.45%** vs **85%** industry target  
   _Focus area: retention uplift initiatives_
         </textarea>
         <aside class="notes">
-          Hit the three bullets quickly; set the context for retention workstreams.
+          Hit the three bullets quickly; set context for retention workstreams.
         </aside>
       </section>
 
@@ -69,7 +72,7 @@ eps     = (revenue * margin) / 0.42        # shares (B)
 print("EPS (est):", eps.round(2))
         </code></pre>
         <aside class="notes">
-          This is illustrative only—tie real EPS sensitivity to guidance ranges.
+          Illustrative only—tie real EPS sensitivity to guidance ranges.
         </aside>
       </section>
 
@@ -79,28 +82,28 @@ print("EPS (est):", eps.round(2))
         <p>Return on Equity (ROE): \\( \\displaystyle ROE = \\frac{\\text{Net Income}}{\\text{Avg. Shareholders' Equity}} \\)</p>
         <p>WACC (simplified): \\( WACC = \\frac{E}{D+E}r_e + \\frac{D}{D+E}r_d(1-T) \\)</p>
         <aside class="notes">
-          Remind audience how we benchmark ROE vs peers and why WACC guides hurdle rates.
+          Remind how we benchmark ROE vs peers and why WACC guides hurdle rates.
         </aside>
       </section>
 
-      <!-- Closing -->
+      <!-- Closing slide with email (clear for validators) -->
       <section>
         <h3>Q&A</h3>
         <p>Slides: GitHub Pages • Contact: <strong>24ds1000011@ds.study.iitm.ac.in</strong></p>
         <aside class="notes">
-          Invite questions; follow with appendix as needed.
+          Invite questions; then show appendix if needed.
         </aside>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal core + plugins -->
-  <script src="https://unpkg.com/reveal.js/dist/reveal.js"></script>
-  <script src="https://unpkg.com/reveal.js/plugin/markdown/markdown.js"></script>
-  <script src="https://unpkg.com/reveal.js/plugin/highlight/highlight.js"></script>
-  <script src="https://unpkg.com/reveal.js/plugin/math/math.js"></script>
-  <script src="https://unpkg.com/reveal.js/plugin/notes/notes.js"></script>
+  <!-- RevealJS scripts + plugins -->
+  <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@5.1.0/plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@5.1.0/plugin/notes/notes.js"></script>
 
   <script>
     Reveal.initialize({
@@ -108,18 +111,9 @@ print("EPS (est):", eps.round(2))
       slideNumber: 'c/t',
       progress: true,
       plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ],
-      // Math config (KaTeX via CDN inside plugin)
-      math: {
-        // defaults are fine; plugin loads KaTeX automatically
-      }
+      // Math config (default KaTeX via plugin)
+      math: { }
     });
   </script>
 </body>
 </html>
-<section>
-  <h2>Contact Information</h2>
-  <p>Email: <strong>24ds1000011@ds.study.iitm.ac.in</strong></p>
-  <aside class="notes">
-    This slide ensures the email is clearly visible to validators.
-  </aside>
-</section>
