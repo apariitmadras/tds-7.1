@@ -1,77 +1,106 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Quarterly Earnings Report</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <title>Quarterly Earnings Report — RevealJS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- RevealJS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme">
+  <!-- RevealJS core CSS + theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme" />
 
-  <!-- Code highlighting -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css">
+  <!-- Code highlight theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css" />
+  <style>
+    .byline { margin-top: 0.5rem; font-size: 1.1rem; }
+    .email-chip {
+      display:inline-block; padding:.35rem .6rem; border-radius:.5rem;
+      background:#222; border:1px solid #444; font-family:ui-monospace,Consolas,monospace;
+    }
+  </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title Slide -->
+      <!-- Title slide (EMAIL CLEARLY VISIBLE) -->
       <section>
         <h1>Quarterly Earnings Report</h1>
-        <p>By: 24ds1000011@ds.study.iitm.ac.in</p>
+        <h3>Financial Institution • Q4</h3>
+        <p class="byline">
+          Prepared by:
+          <strong class="email-chip">24ds1000011@ds.study.iitm.ac.in</strong>
+        </p>
         <aside class="notes">
-          Introduce yourself and explain the purpose of the report.
+          Greet the audience, state your name/role, and outline the agenda.
         </aside>
       </section>
 
-      <!-- Markdown Slide -->
+      <!-- Markdown slide -->
       <section data-markdown>
         <textarea data-template>
-### Key Highlights (Markdown Example)
-- Revenue Growth: **15% YoY**
-- Net Profit Margin: **12%**
-- Customer Acquisition up by *8%*
+### Key Highlights _(Markdown)_
+- **Revenue Growth:** 15% YoY  
+- **Net Profit Margin:** 12%  
+- **Customer Acquisition:** +8%  
+- **Operating Expense Ratio:** ↓ 120 bps
+
+> These headline metrics frame the rest of the deck.
         </textarea>
         <aside class="notes">
-          Explain revenue growth and acquisition improvements.
+          Call out YoY vs QoQ trends and why the Opex ratio fell.
         </aside>
       </section>
 
-      <!-- Animated fragments -->
+      <!-- Fragments -->
       <section>
-        <h2>Quarterly Performance Drivers</h2>
+        <h2>Performance Drivers</h2>
         <ul>
-          <li class="fragment">Increased Digital Transactions</li>
-          <li class="fragment">New Product Launch</li>
-          <li class="fragment">Operational Efficiency</li>
+          <li class="fragment">Digital transactions growth</li>
+          <li class="fragment">New wealth products uptake</li>
+          <li class="fragment">Credit risk normalization</li>
+          <li class="fragment">Operational efficiency initiatives</li>
         </ul>
         <aside class="notes">
-          Reveal each driver one by one to keep audience engaged.
+          Reveal each point and add a one-liner example per driver.
         </aside>
       </section>
 
-      <!-- Code sample -->
+      <!-- Code sample with syntax highlighting -->
       <section>
-        <h2>Data Pipeline Example</h2>
+        <h2>Data Pipeline (Example)</h2>
         <pre><code class="language-python">
 import pandas as pd
 
 df = pd.read_csv("earnings.csv")
-print(df.describe())
+kpis = df.groupby("quarter").agg({"revenue":"sum","net_income":"sum"})
+kpis["margin"] = (kpis["net_income"] / kpis["revenue"]).round(4)
+print(kpis)
         </code></pre>
         <aside class="notes">
-          Demonstrate modern analytics capabilities.
+          Explain that underlying analysis is reproducible and scripted.
         </aside>
       </section>
 
-      <!-- Mathematical equation -->
+      <!-- Math (financial formulas) -->
       <section>
-        <h2>Financial Formula</h2>
-        <p>Return on Equity (ROE):</p>
-        <p>$$ ROE = \frac{Net \ Income}{Shareholder's \ Equity} $$</p>
+        <h2>Financial Formulas</h2>
+        <p><strong>Return on Equity (ROE)</strong></p>
+        <p>$$ ROE = \frac{Net\ Income}{Shareholders'\ Equity} $$</p>
+        <p><strong>Compound Annual Growth Rate (CAGR)</strong></p>
+        <p>$$ CAGR = \left(\frac{V_f}{V_i}\right)^{\tfrac{1}{n}} - 1 $$</p>
         <aside class="notes">
-          Show formula to highlight financial analysis.
+          Give quick intuition: ROE measures efficiency; CAGR smooths multi-period growth.
+        </aside>
+      </section>
+
+      <!-- Closing / contact slide (email visible again just in case) -->
+      <section>
+        <h2>Thank You</h2>
+        <p>Questions?</p>
+        <p>Contact: <strong class="email-chip">24ds1000011@ds.study.iitm.ac.in</strong></p>
+        <aside class="notes">
+          Invite Q&A and next steps.
         </aside>
       </section>
 
@@ -84,11 +113,13 @@ print(df.describe())
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
 
   <script>
     Reveal.initialize({
       hash: true,
-      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX, RevealNotes ]
     });
   </script>
 </body>
