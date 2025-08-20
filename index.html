@@ -1,83 +1,93 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Quarterly Earnings — RevealJS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <title>Quarterly Earnings Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- RevealJS core + theme -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+  <!-- RevealJS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" id="theme">
 
-  <!-- Code highlight theme -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/monokai.css">
+  <!-- Code highlighting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css">
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title with email (visible on slide) -->
+      <!-- Title Slide -->
       <section>
-        <h2>Quarterly Earnings Report</h2>
-        <p><strong>Email:</strong> 24ds1000011@ds.study.iitm.ac.in</p>
+        <h1>Quarterly Earnings Report</h1>
+        <p>By: 24ds1000011@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Introduce yourself and explain the purpose of the report.
+        </aside>
       </section>
 
-      <!-- Markdown slide -->
+      <!-- Markdown Slide -->
       <section data-markdown>
         <textarea data-template>
-### Key Metrics (Markdown)
-- Revenue growth **+6.1% YoY**
-- Retention rate: **72.45%** vs **85%** target
+### Key Highlights (Markdown Example)
+- Revenue Growth: **15% YoY**
+- Net Profit Margin: **12%**
+- Customer Acquisition up by *8%*
         </textarea>
+        <aside class="notes">
+          Explain revenue growth and acquisition improvements.
+        </aside>
       </section>
 
-      <!-- Fragments -->
+      <!-- Animated fragments -->
       <section>
-        <h3>Drivers of Change</h3>
+        <h2>Quarterly Performance Drivers</h2>
         <ul>
-          <li class="fragment fade-in">Volume softness in EU auto</li>
-          <li class="fragment fade-in">Freight cost normalization</li>
-          <li class="fragment fade-in">FX headwinds in LATAM</li>
+          <li class="fragment">Increased Digital Transactions</li>
+          <li class="fragment">New Product Launch</li>
+          <li class="fragment">Operational Efficiency</li>
         </ul>
+        <aside class="notes">
+          Reveal each driver one by one to keep audience engaged.
+        </aside>
       </section>
 
       <!-- Code sample -->
       <section>
-        <h3>Python Example</h3>
-        <pre><code class="language-python" data-trim>
-import numpy as np
+        <h2>Data Pipeline Example</h2>
+        <pre><code class="language-python">
+import pandas as pd
 
-rates = [71.51, 74.36, 71.96, 71.98]
-avg = np.mean(rates)
-print("Avg Retention:", round(avg, 2))  # should be 72.45
+df = pd.read_csv("earnings.csv")
+print(df.describe())
         </code></pre>
+        <aside class="notes">
+          Demonstrate modern analytics capabilities.
+        </aside>
       </section>
 
-      <!-- Math -->
+      <!-- Mathematical equation -->
       <section>
-        <h3>Formula</h3>
-        <p>Return on Equity: \\( ROE = \\frac{Net\ Income}{Avg.\ Equity} \\)</p>
-      </section>
-
-      <!-- Closing with email (again, visible) -->
-      <section>
-        <h3>Thank You</h3>
-        <p>Contact: <strong>24ds1000011@ds.study.iitm.ac.in</strong></p>
+        <h2>Financial Formula</h2>
+        <p>Return on Equity (ROE):</p>
+        <p>$$ ROE = \frac{Net \ Income}{Shareholder's \ Equity} $$</p>
+        <aside class="notes">
+          Show formula to highlight financial analysis.
+        </aside>
       </section>
 
     </div>
   </div>
 
-  <!-- RevealJS scripts -->
-  <script src="https://unpkg.com/reveal.js@5.1.0/dist/reveal.js"></script>
-  <script src="https://unpkg.com/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
-  <script src="https://unpkg.com/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
-  <script src="https://unpkg.com/reveal.js@5.1.0/plugin/math/math.js"></script>
+  <!-- RevealJS core -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+  <!-- Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/math/math.js"></script>
+
   <script>
     Reveal.initialize({
       hash: true,
-      slideNumber: 'c/t',
-      progress: true,
       plugins: [ RevealMarkdown, RevealHighlight, RevealMath.KaTeX ]
     });
   </script>
